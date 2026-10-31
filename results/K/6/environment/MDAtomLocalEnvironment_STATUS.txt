@@ -1,0 +1,1 @@
+MDAtomLocalEnvironment was not executed on this pilot (optional --mdatom). Python first-shell descriptors in final/descriptors.csv are separate from author stdout.

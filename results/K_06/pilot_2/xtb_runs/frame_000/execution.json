@@ -1,0 +1,16 @@
+{
+  "cmd": [
+    "/home/antiz/xtb-standalone/xtb-dist/bin/xtb",
+    "input.xyz",
+    "--gfn",
+    "2",
+    "--chrg",
+    "1",
+    "--alpb",
+    "water",
+    "--opt",
+    "tight"
+  ],
+  "returncode": 0,
+  "status": "success"
+}

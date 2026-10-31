@@ -1,0 +1,34 @@
+{
+  "case": "K_06",
+  "cmd": [
+    "/usr/bin/python3",
+    "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/vendors/Glorious-Water-Hole/gloriouswaterhole.py",
+    "-f",
+    "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/inputs/K_06/packing.vecfle",
+    "--Charge",
+    "1",
+    "--NumStruct",
+    "2",
+    "--Random",
+    "--Opt",
+    "--AddMethod",
+    " --alpb water --gfn 2 ",
+    "--DoNotCenter"
+  ],
+  "timestamp_UTC": "2026-10-30T12:49:54.741078+00:00",
+  "source_vecfle_sha256": "06ff2c3bf4b43e0d0382a684539dd5b3edf8e618500c857b9d4aa045700a11e5",
+  "GWH_git_revision": "7411811374b6422a15f23d6d86a47f2145f8ac47",
+  "gwh_euler": {
+    "path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/vendors/Glorious-Water-Hole/gloriouswaterhole.py",
+    "sha256": "17fa895af60893c0cf34982d235b6b9909e7aa05c47c0f8efaa07f8608b37bed",
+    "intrinsic_zyz": true,
+    "has_zyz": true,
+    "has_zyx": false,
+    "scipy_note": "SciPy Rotation.from_euler lowercase sequence is intrinsic. 'zyz' is therefore intrinsic ZYZ."
+  },
+  "xtb_binary": "/home/antiz/xtb-standalone/xtb-dist/bin/xtb",
+  "xtb_version": "-----------------------------------------------------------      \n     |                   =====================                   |     \n     |                           x T B                           |     \n     |                   =====================                   |     \n     |                         S. Grimme                         |     \n     |          Mulliken Center for Theoretical Chemistry        |     \n     |                    University of Bonn                     |     \n      -----------------------------------------------------------      \n\n   * xtb version 6.7.1 (edcfbbe) compiled by 'albert@albert-system' on 2024-07-22\n\n\nnormal termination of xtb",
+  "nstruct_target": 2,
+  "stage": "CONSTRAINED",
+  "note": "No CoCoS filtering or energy-window preselection allowed before free optimization."
+}

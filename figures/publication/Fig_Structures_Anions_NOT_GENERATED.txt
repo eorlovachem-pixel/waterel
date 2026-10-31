@@ -1,0 +1,2 @@
+Fig_Structures_Anions was not generated: no F-/Cl-/Br- calculations exist in this kit.
+CASE_STATUS has no anion rows. No dummy structures were drawn.

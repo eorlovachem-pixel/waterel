@@ -1,0 +1,11 @@
+{
+  "burette_repo": "https://github.com/SergeiNikolenko/Burette",
+  "burette_docs": "https://burette-landing.vercel.app/docs",
+  "burette_demo": "https://burette-landing.vercel.app/demo",
+  "host": "linux",
+  "burette_app_available": false,
+  "burette_app_reason": "Burette.app is a macOS 12+ Apple Silicon desktop application (Homebrew cask SergeiNikolenko/burette). This host is Windows/WSL. Finder Quick Look, the Codex plugin, and the iPhone target do not run in Cursor on Windows. The public browser demo is a preview surface, not a headless exporter; screenshots would include UI chrome, which is forbidden for publication figures.",
+  "xyzrender_role": "Burette documents xyzrender as the XYZ fallback renderer (https://github.com/SergeiNikolenko/Burette README, External xyzrender). CLI exports from xyzrender are labeled renderer=xyzrender, not Burette.app.",
+  "xyzrender_path": "/home/antiz/.local/bin/xyzrender",
+  "checked_utc": "2026-10-31T00:48:02.027814+00:00"
+}

@@ -1,0 +1,12 @@
+We will use intial sampling of 100 3D rotations
+We are using the frequency of 0.035 cm**{-1} for the non-linear optimization and 
+    83.4 cm**{-1} for the criterion.
+Using more sophisticated scheme for assigning atomic maps
+We are using mass-weighted RMSD with chi2 statistics to compare conformers
+Are we treating enantiomers as the same specie? True
+ chi2 quartile for level alpha=0.99 and 51 degrees of freedom is 77.38596201613736
+added structure 0
+Removed structure 1 as a copy of 0
+ For pair of conformers 000 - 002 we get a best match from the mirror image
+Removed structure 2 as a copy of 0
+

@@ -1,0 +1,32 @@
+commit 7411811374b6422a15f23d6d86a47f2145f8ac47
+Author: Denis Tikhonov <tikhonov@cfelt-gunsandroses.desy.de>
+Date:   Fri Oct 30 09:13:59 2026 +0100
+
+    fixed Euler angles definition
+
+diff --git a/gloriouswaterhole.py b/gloriouswaterhole.py
+index 3163cd9..35ded3b 100644
+--- a/gloriouswaterhole.py
++++ b/gloriouswaterhole.py
+@@ -91,7 +91,7 @@ def RotateMolecule(XYZ, phi, theta, chi):
+     
+     @return NewXYZ     New XYZ coordinates of water molecule (ndarray of floats).
+     """
+-    M = spst.Rotation.from_euler('zyx', [phi, theta, chi], degrees=True).as_matrix()
++    M = spst.Rotation.from_euler('zyz', [phi, theta, chi], degrees=True).as_matrix()
+     NewXYZ = np.array(XYZ)
+     for i in range(0,NewXYZ.shape[0]):
+         NewXYZ[i] = np.matmul(M,NewXYZ[i])
+diff --git a/test/test_gwh.py b/test/test_gwh.py
+index 0c14fc3..4c6e164 100644
+--- a/test/test_gwh.py
++++ b/test/test_gwh.py
+@@ -273,7 +273,7 @@ class TestStuff(unittest.TestCase):
+                                 RunOpt=True,
+                                 SaveBase="save_data_opt")
+                                 
+-            self.assertAlmostEqual(MinEn,-4.976112102400,places=5)                   
++            self.assertAlmostEqual(MinEn,-4.9761121024,places=5)                   
+     
+             MinEnSPE, _ = gwh.RunOptimizationOfTheCluster(1, 1, "test.txt", 
+                                 PathToOrca=None, RunXTB = True,

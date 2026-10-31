@@ -1,0 +1,5 @@
+# cmd: ['/usr/bin/python3', '/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py', 'gwh', '--case', 'K_06', '--pilot', '--nstruct', '2', '--xtb', '/home/antiz/xtb-standalone/xtb-dist/bin/xtb']
+# cwd: /home/antiz/hydration-research/Hydration_unassigned_2026-10-30
+# start_UTC: 2026-10-30T12:49:54.099993+00:00
+STARTING REAL GWH: K_06 number of structures: 2
+GWH exit code: 0 ; inspect /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/pilots/K_06/gwh_stdout_stderr.log

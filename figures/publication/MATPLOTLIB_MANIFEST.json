@@ -1,0 +1,41 @@
+{
+  "software": "matplotlib",
+  "not_burette": true,
+  "dpi": 300,
+  "source_csv": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K/6/final/descriptors.csv",
+  "source_code": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/publication/figures_matplotlib.py",
+  "files": [
+    "Fig_Conformers.pdf",
+    "Fig_Conformers.png",
+    "Fig_Conformers.svg",
+    "Fig_Coordination_Shells.pdf",
+    "Fig_Coordination_Shells.png",
+    "Fig_Coordination_Shells.svg",
+    "Fig_K06_DeltaE.pdf",
+    "Fig_K06_DeltaE.png",
+    "Fig_K06_DeltaE.svg",
+    "Fig_K06_Pilot.pdf",
+    "Fig_K06_Pilot.png",
+    "Fig_K06_Pilot.svg",
+    "Fig_K06_R_ion_O.pdf",
+    "Fig_K06_R_ion_O.png",
+    "Fig_K06_R_ion_O.svg",
+    "Fig_K06_orientation.pdf",
+    "Fig_K06_orientation.png",
+    "Fig_K06_orientation.svg",
+    "Fig_Series_R_CN_cos_NOT_GENERATED.pdf",
+    "Fig_Series_R_CN_cos_NOT_GENERATED.png",
+    "Fig_Series_R_CN_cos_NOT_GENERATED.svg",
+    "Fig_Structures_Anions_NOT_GENERATED.txt",
+    "Fig_Structures_Cations.pdf",
+    "Fig_Structures_Cations.png",
+    "Fig_Structures_Cations.svg"
+  ],
+  "definitions": {
+    "delta_kcal_mol": "E - min(E) of this confirmed set, Hartree→kcal/mol 627.5094740631",
+    "R": "Euclidean ion–O distances, Å",
+    "cos_theta": "cos(angle between ion→O and O→H-midpoint)",
+    "P2": "(3 cos^2 theta - 1)/2",
+    "CN": "count of O with R < 3.20 Å (BLOCKING_UNCONFIRMED cutoff)"
+  }
+}

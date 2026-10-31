@@ -1,0 +1,7 @@
+{
+  "case": "K_06",
+  "target": 2,
+  "valid": 2,
+  "invalid": [],
+  "STAGE": "CONSTRAINED_GWH_ONLY"
+}

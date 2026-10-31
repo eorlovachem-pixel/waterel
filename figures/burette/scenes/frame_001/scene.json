@@ -1,0 +1,45 @@
+{
+  "id": "frame_001",
+  "ion": "K",
+  "n_water": 6,
+  "charge": 1,
+  "energy_Eh": -30.517135487228,
+  "cocos_group": 0,
+  "origin": "free optimization of GWH structure 0001",
+  "source_xyz": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/xtbopt.xyz",
+  "original_xyz": "original.xyz",
+  "aligned_xyz": "aligned_for_view.xyz",
+  "original_sha256": "cbd2d5f4b8cfcc03bccf4e9f938707c7c1fe9d5725135f7c7f9de990e4f43450",
+  "method": "GFN2-xTB / ALPB(water), frequencies confirmed ν ≥ −5 cm⁻¹",
+  "camera": {
+    "align": "ion_at_origin_then_Kabsch_on_O_for_comparison_copy_only",
+    "original_xyz_untouched": true,
+    "xyzrender_flags": {
+      "config": "tube",
+      "canvas_px": 2400,
+      "hy": true,
+      "nci": true,
+      "orient": false,
+      "background": "white",
+      "atom_scale": 1.15,
+      "hl_central": true
+    }
+  },
+  "atom_legend": {
+    "Li": "violet",
+    "Na": "blue",
+    "K": "purple / violet (central ion, enlarged)",
+    "Rb": "dark red / violet",
+    "F": "green",
+    "Cl": "green",
+    "Br": "dark red",
+    "O": "red",
+    "H": "white"
+  },
+  "nci_pairs_1based": [],
+  "burette_open": {
+    "macos": "Open original.xyz in Burette.app (Mol* or xyzrender renderer).",
+    "windows_wsl": "Burette.app not available; use xyzrender CLI on aligned_for_view.xyz."
+  },
+  "created_utc": "2026-10-31T00:48:02.029271+00:00"
+}

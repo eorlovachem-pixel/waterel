@@ -1,0 +1,3 @@
+id,status,classification,n_frequencies_parsed,imaginary_cm1,is_genuine_minimum_candidate
+frame_000,success,NOT_A_MINIMUM,57,-66.0600,False
+frame_001,success,NO_IMAGINARY_ABOVE_THRESHOLD,57,,True

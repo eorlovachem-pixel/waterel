@@ -1,0 +1,12 @@
+{
+  "path": "/home/antiz/.local/bin/xyzrender",
+  "version": "xyzrender 0.3.8",
+  "burette_head": "ba8171ec5bc0315bb3ace11cf2374ee908b67728 HEAD",
+  "export": {
+    "config": "tube",
+    "canvas_requested_px": 2400,
+    "observed_png_px": "6207–7200 on the long edge (xyzrender output, not downsampled)",
+    "formats": ["svg", "png"],
+    "dpi_claim": "PNG pixel size exceeds 2400 px; physical dpi depends on the journal box. SVG is vector."
+  }
+}

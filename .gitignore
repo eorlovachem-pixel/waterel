@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+environment_check_report.json
+archive/cleanup_backup_*/
+archive/cleanup_inventory_*.json
+archive/
+vendors/
+preflight_runs/
+.venv/
+venv/
+cases/
+pilots/
+tools/wsl_go.py
+tools/git_waterel.py

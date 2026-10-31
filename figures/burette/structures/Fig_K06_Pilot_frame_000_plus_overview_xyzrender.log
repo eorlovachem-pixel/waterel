@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "cmd": [
+    "/home/antiz/.local/bin/xyzrender",
+    "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/scenes/frame_000_plus/aligned_for_view.xyz",
+    "-o",
+    "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_000_plus_overview.png",
+    "--config",
+    "tube",
+    "-S",
+    "2400",
+    "--hy",
+    "--no-orient",
+    "-B",
+    "white",
+    "-a",
+    "1.15",
+    "--nci",
+    "--hl",
+    "M",
+    "#5b2c6f",
+    "--radius-scale",
+    "M",
+    "1.35"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Loading /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/scenes/frame_000_plus/aligned_for_view.xyz\nBuilt graph: 19 atoms, 18 bonds\nDetecting NCI interactions\nDetected 0 NCI interactions\n",
+  "path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_000_plus_overview.png",
+  "bytes": 1753891,
+  "renderer": "xyzrender",
+  "not_burette_app": true
+}

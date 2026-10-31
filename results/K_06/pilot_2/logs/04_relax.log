@@ -1,0 +1,6 @@
+# cmd: ['/usr/bin/python3', '/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py', 'relax', '--case', 'K_06', '--pilot', '--xtb', '/home/antiz/xtb-standalone/xtb-dist/bin/xtb', '--workers', '1']
+# cwd: /home/antiz/hydration-research/Hydration_unassigned_2026-10-30
+# start_UTC: 2026-10-30T12:50:42.254106+00:00
+frame_000 success -30.517082221236
+frame_001 success -30.517135487228
+Run complete; execute the dedup command after verifying logs.

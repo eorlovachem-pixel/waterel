@@ -1,0 +1,23 @@
+{
+  "xtb": "/home/antiz/xtb-standalone/xtb-dist/bin/xtb",
+  "xtb_sha256": "debf27a9e0fa4bfb5ca75aafe4b90d8211f08ec2f4a482f375a4987212eaa12a",
+  "gwh_git": "7411811374b6422a15f23d6d86a47f2145f8ac47",
+  "gwh_euler": {
+    "path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/vendors/Glorious-Water-Hole/gloriouswaterhole.py",
+    "sha256": "17fa895af60893c0cf34982d235b6b9909e7aa05c47c0f8efaa07f8608b37bed",
+    "intrinsic_zyz": true,
+    "has_zyz": true,
+    "has_zyx": false,
+    "scipy_note": "SciPy Rotation.from_euler lowercase sequence is intrinsic. 'zyz' is therefore intrinsic ZYZ."
+  },
+  "vecfle": {
+    "path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/inputs/K_06/packing.vecfle",
+    "sha256": "06ff2c3bf4b43e0d0382a684539dd5b3edf8e618500c857b9d4aa045700a11e5",
+    "n_water": 6,
+    "ion": "K",
+    "radius_A": 3.04,
+    "unit_vectors": true
+  },
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "which_xtb_during_run": "/home/antiz/xtb-standalone/xtb-dist/bin/xtb"
+}

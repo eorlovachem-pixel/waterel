@@ -1,0 +1,5 @@
+# cmd: ['/usr/bin/python3', '/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py', 'collect', '--case', 'K_06', '--pilot']
+# cwd: /home/antiz/hydration-research/Hydration_unassigned_2026-10-30
+# start_UTC: 2026-10-30T12:50:40.406938+00:00
+K_06 verified GWH outputs 2 / 2
+Wrote /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/pilots/K_06/source/constrained_multiframe.xyz and /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/pilots/K_06/source/energies.csv

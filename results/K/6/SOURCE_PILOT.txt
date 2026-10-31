@@ -1,0 +1,3 @@
+Original unmodified tree: results/K_06/pilot_2/
+This directory is a publication-facing copy of unique confirmed products.
+Do not treat it as a second independent calculation.

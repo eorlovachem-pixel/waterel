@@ -1,0 +1,6 @@
+GWH https://gitlab.com/madschumacher/glorious-water-hole
+CoCoS https://gitlab.com/madschumacher/cocoso
+MDAtomLocalEnvironment https://gitlab.com/madschumacher/mdatomlocalenvironment
+Source packing and initial M–O radii: user-provided vecfle.zip and make.sh.
+All initial .vecfle files in inputs/ copied byte-for-byte from vecfle.zip, hashes in CASE_STATUS.csv.
+Shared Drive snapshot: https://drive.google.com/drive/folders/14ltUb63LmmihKGgzMf-geoXxPUmNLSp2

@@ -1,0 +1,6 @@
+# cmd: ['/usr/bin/python3', '/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py', 'hess', '--case', 'K_06', '--pilot', '--xtb', '/home/antiz/xtb-standalone/xtb-dist/bin/xtb', '--workers', '1', '--imag-thresh', '5.0']
+# cwd: /home/antiz/hydration-research/Hydration_unassigned_2026-10-30
+# start_UTC: 2026-10-30T12:50:43.826432+00:00
+frame_000 success NOT_A_MINIMUM
+frame_001 success NO_IMAGINARY_ABOVE_THRESHOLD
+Wrote /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/pilots/K_06/xtb_runs/postprocess/hessian_status.csv

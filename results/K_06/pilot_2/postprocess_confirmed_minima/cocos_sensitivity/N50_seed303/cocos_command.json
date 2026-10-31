@@ -1,0 +1,17 @@
+{
+  "cmd": [
+    "/usr/bin/python3",
+    "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+    "303",
+    "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+    "-f",
+    "free_sorted_for_cocos.xyz",
+    "--DoNotUseGlobalOpt",
+    "--NumSamples",
+    "50",
+    "--DoNotSaveDoubles"
+  ],
+  "returncode": 0,
+  "seed": 303,
+  "samples": 50
+}

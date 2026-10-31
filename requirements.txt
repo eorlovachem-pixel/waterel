@@ -1,0 +1,8 @@
+# Pinned from the live Ubuntu 26.04 WSL environment on 2026-10-30.
+# System interpreter: Python 3.14.4. These are the importable versions, not invented pins.
+# GitHub Actions uses the same lower bounds on Python 3.12.
+numpy>=2.0
+scipy>=1.11
+matplotlib>=3.8
+pytest>=8.0
+# Optional: xyzrender (Burette-documented XYZ fallback). Not required for pytest.

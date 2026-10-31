@@ -1,0 +1,16 @@
+{
+  "archived": true,
+  "timestamp_UTC": "2026-10-30T23:52:53.185533+00:00",
+  "note": "Full pipeline-check tree (duplicate of pilot_2 xtb_runs + CoCoS copies) was moved to archive/cleanup_backup_2026-10-31. Canonical geometries remain in results/K_06/pilot_2/.",
+  "canonical_pilot": "results/K_06/pilot_2",
+  "confirmed_ids": [
+    "frame_001",
+    "frame_000_minus",
+    "frame_000_plus"
+  ],
+  "unique_representative": "frame_001",
+  "unique_energy_Eh": -30.517135487228,
+  "cocos_stable_grouping": true,
+  "n_unique": 1,
+  "backup": "archive/cleanup_backup_2026-10-31/results/K_06/pilot_2_pipeline_check"
+}

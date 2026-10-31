@@ -1,0 +1,124 @@
+# K+(H2O)6 2-structure pilot report
+
+Generated UTC: 2026-10-30T12:50:48.156749+00:00
+This file contains only values read from completed xTB/GWH files. No fabricated energies.
+
+## Scope
+
+- Case: `K_06`
+- Structures requested: **2**
+- 100-structure series: **not run**
+- Previous `pilots/Li_07` and `cases/Li_07`: not modified
+- Work directory: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2`
+- Pipeline symlink: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/pilots/K_06 -> /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2`
+
+## Inputs and programs
+
+- packing.vecfle SHA256: `06ff2c3bf4b43e0d0382a684539dd5b3edf8e618500c857b9d4aa045700a11e5`
+- ion / n_water / radius: K / 6 / 3.04 Å
+- GWH git: `7411811374b6422a15f23d6d86a47f2145f8ac47`
+- GWH Euler: intrinsic ZYZ = `True` (`from_euler('zyz')`)
+- xTB binary: `/home/antiz/xtb-standalone/xtb-dist/bin/xtb` SHA256 `debf27a9e0fa4bfb5ca75aafe4b90d8211f08ec2f4a482f375a4987212eaa12a`
+- Method: GFN2-xTB, ALPB(water), charge +1
+- Free opt: unconstrained `--opt tight`
+- Hessian threshold for **significant** imaginary modes: |ν| > 5.0 cm⁻¹
+- Near-zero trans/rot: |ν| ≤ 5.0 cm⁻¹, not counted as imaginary
+
+## Commands
+
+1. returncode=0 `/usr/bin/python3 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py gwh --case K_06 --pilot --nstruct 2 --xtb /home/antiz/xtb-standalone/xtb-dist/bin/xtb`
+   log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/logs/01_gwh.log`
+2. returncode=0 `/usr/bin/python3 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py collect --case K_06 --pilot`
+   log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/logs/02_collect.log`
+3. returncode=0 `/usr/bin/python3 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py prepare --case K_06 --pilot`
+   log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/logs/03_prepare.log`
+4. returncode=0 `/usr/bin/python3 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py relax --case K_06 --pilot --xtb /home/antiz/xtb-standalone/xtb-dist/bin/xtb --workers 1`
+   log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/logs/04_relax.log`
+5. returncode=0 `/usr/bin/python3 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py hess --case K_06 --pilot --xtb /home/antiz/xtb-standalone/xtb-dist/bin/xtb --workers 1 --imag-thresh 5.0`
+   log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/logs/05_hess.log`
+6. returncode=0 `/usr/bin/python3 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/mode_follow.py --xyz /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/xtbopt.xyz --g98 /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/hess/g98.out --vibspectrum /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/hess/vibspectrum --outdir /home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow --step-A 0.15 --imag-thresh 5.0`
+   log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/logs/06_mode_follow_displace.log`
+
+## Constrained GWH stage
+
+- GWH exit file: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/gwh_exit_code.txt` contents `0`
+- GWH combined log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/gwh_stdout_stderr.log` exists=True
+- Constrained multi-XYZ: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/source/constrained_multiframe.xyz` exists=True
+- Constrained energies CSV: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/source/energies.csv` exists=True
+- Constrained frames parsed: 2
+  - structure 0000: 19 atoms, formula {'K': 1, 'O': 6, 'H': 12}, E_constrained = -30.514932790359 Eh
+    file: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/gwh/gwh_opt_str0000/mol_str0000_fin.xyz`
+  - structure 0001: 19 atoms, formula {'K': 1, 'O': 6, 'H': 12}, E_constrained = -30.514937134382 Eh
+    file: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/gwh/gwh_opt_str0001/mol_str0001_fin.xyz`
+
+## Free optimization (GFN2-xTB / ALPB water, charge +1)
+
+Success requires: process exit 0 **and** `GEOMETRY OPTIMIZATION CONVERGED` **and** `normal termination of xtb` **and** matching TOTAL ENERGY vs `xtbopt.xyz`.
+
+### frame_000
+
+- E_free = **-30.51708222123600 Eh**
+- opt_converged: True
+- normal_termination: True
+- geometry: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/xtbopt.xyz`
+- opt log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/xtb.out`
+- hess log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/hess/xtb_hess.out`
+- Hessian classification (parser): `NOT_A_MINIMUM`
+- n_frequencies parsed from xtb log: 57
+- significant imaginary from log parser (ν < -5 cm⁻¹): [-66.06]
+- near-zero from log parser (|ν| ≤ 5 cm⁻¹): [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0]
+- vibspectrum n_modes: 57
+- vibspectrum near-zero count: 6 values [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0]
+- vibspectrum significant imaginary count: 1
+- vibspectrum significant imaginary: [{'mode_index': 7, 'frequency_cm1': -66.06}]
+- vibspectrum lowest frequency: -66.06 cm⁻¹
+- vibspectrum all frequencies (cm⁻¹): [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0, -66.06, 28.17, 33.34, 48.01, 48.25, 49.34, 51.49, 58.97, 60.35, 64.45, 68.67, 72.02, 77.55, 80.77, 84.41, 112.64, 123.93, 139.91, 153.02, 162.75, 172.17, 190.64, 195.43, 207.52, 219.8, 225.16, 232.6, 307.0, 311.04, 318.71, 338.62, 359.12, 364.54, 1484.2, 1486.53, 1488.98, 1490.22, 1490.8, 1494.42, 3538.19, 3538.4, 3538.56, 3541.35, 3542.89, 3543.1, 3570.43, 3576.96, 3578.37, 3582.41, 3584.67, 3588.13]
+- g98.out vibrational frequencies (cm⁻¹): [-66.0649, 28.1675, 33.3383, 48.0102, 48.2501, 49.3393, 51.4917, 58.9665, 60.3479, 64.4497, 68.6665, 72.0239, 77.548, 80.7653, 84.4064, 112.6447, 123.9259, 139.9098, 153.0203, 162.7511, 172.1741, 190.6362, 195.4292, 207.5193, 219.7979, 225.158, 232.5967, 307.0036, 311.0393, 318.7065, 338.6193, 359.1189, 364.5371, 1484.2024, 1486.5316, 1488.984, 1490.2233, 1490.8017, 1494.4219, 3538.1924, 3538.4047, 3538.5628, 3541.3532, 3542.8874, 3543.0957, 3570.4291, 3576.9598, 3578.3672, 3582.4061, 3584.6694, 3588.1258]
+
+### frame_001
+
+- E_free = **-30.51713548722800 Eh**
+- opt_converged: True
+- normal_termination: True
+- geometry: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/xtbopt.xyz`
+- opt log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/xtb.out`
+- hess log: `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/hess/xtb_hess.out`
+- Hessian classification (parser): `NO_IMAGINARY_ABOVE_THRESHOLD`
+- n_frequencies parsed from xtb log: 57
+- significant imaginary from log parser (ν < -5 cm⁻¹): []
+- near-zero from log parser (|ν| ≤ 5 cm⁻¹): [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0]
+- vibspectrum n_modes: 57
+- vibspectrum near-zero count: 6 values [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0]
+- vibspectrum significant imaginary count: 0
+- vibspectrum significant imaginary: []
+- vibspectrum lowest frequency: -0.0 cm⁻¹
+- vibspectrum all frequencies (cm⁻¹): [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0, 31.12, 41.18, 42.98, 48.02, 55.83, 59.31, 61.01, 63.53, 66.28, 68.9, 70.85, 74.79, 80.45, 85.66, 95.26, 109.0, 150.01, 155.3, 158.48, 171.17, 177.51, 189.86, 200.6, 220.64, 236.35, 243.98, 265.08, 313.23, 325.74, 328.87, 356.64, 362.07, 364.41, 1486.77, 1488.98, 1489.99, 1490.71, 1493.04, 1494.02, 3540.43, 3541.74, 3542.33, 3543.22, 3544.01, 3544.22, 3571.69, 3579.81, 3580.52, 3582.12, 3587.88, 3588.51]
+- g98.out vibrational frequencies (cm⁻¹): [31.1161, 41.1767, 42.9798, 48.0164, 55.8299, 59.3144, 61.0103, 63.5293, 66.28, 68.8971, 70.8533, 74.7933, 80.4512, 85.6555, 95.2614, 109.0022, 150.0077, 155.2983, 158.4793, 171.1674, 177.5114, 189.8602, 200.6003, 220.6439, 236.3516, 243.9781, 265.0789, 313.2344, 325.7369, 328.8719, 356.639, 362.0665, 364.4084, 1486.7698, 1488.9751, 1489.9876, 1490.7051, 1493.0394, 1494.0231, 3540.4341, 3541.7398, 3542.3284, 3543.216, 3544.0128, 3544.2171, 3571.6889, 3579.814, 3580.5213, 3582.1184, 3587.8772, 3588.5116]
+
+## Mode following (±0.15 Å)
+
+Selected structure: `frame_000` (most negative significant imaginary mode).
+- Chosen g98 frequency: -66.0649 cm⁻¹
+- Scale convention: largest_atomic_cartesian_displacement_equals_step_A
+- step: 0.15 Å
+### branch `plus`
+- opt returncode: 0
+- verified: {"energy_Eh": -30.517067438374, "opt_converged": true, "normal_termination": true}
+- re-hess parser classification: NO_IMAGINARY_ABOVE_THRESHOLD
+- re-hess significant imag: []
+- re-hess vibspectrum: {"n_modes": 57, "imag_thresh_cm1": 5.0, "n_near_zero": 6, "near_zero_cm1": [-0.0, -0.0, 0.0, 0.0, 0.0, 0.0], "n_significant_imaginary": 0, "significant_imaginary": [], "n_real_vibrational": 51, "lowest_frequency_cm1": -0.0, "frequencies_cm1": [-0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 22.12, 33.58, 45.03, 45.72, 49.46, 53.06, 56.1, 59.87, 64.9, 67.45, 73.23, 76.71, 80.6, 84.29, 97.3, 123.99, 144.83, 154.24, 158.7, 166.8, 174.32, 191.15, 202.23, 227.57, 233.58, 257.98, 286.88, 317.03, 318.79, 338.99, 345.45, 368.67, 389.5, 1486.14, 1488.77, 1489.94, 1491.93, 1497.44, 1498.11, 3538.59, 3539.45, 3540.35, 3543.23, 3543.89, 3544.68, 3571.05, 3577.98, 3580.54, 3581.45, 3586.34, 3588.15]}
+
+### branch `minus`
+- opt returncode: 0
+- verified: {"energy_Eh": -30.517100856916, "opt_converged": true, "normal_termination": true}
+- re-hess parser classification: NO_IMAGINARY_ABOVE_THRESHOLD
+- re-hess significant imag: []
+- re-hess vibspectrum: {"n_modes": 57, "imag_thresh_cm1": 5.0, "n_near_zero": 6, "near_zero_cm1": [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0], "n_significant_imaginary": 0, "significant_imaginary": [], "n_real_vibrational": 51, "lowest_frequency_cm1": -0.0, "frequencies_cm1": [-0.0, -0.0, -0.0, 0.0, 0.0, 0.0, 23.62, 36.89, 42.23, 45.65, 48.22, 52.54, 58.21, 60.29, 61.54, 63.81, 71.02, 75.91, 77.11, 83.14, 83.3, 85.5, 128.28, 144.6, 150.02, 169.23, 183.62, 190.17, 198.87, 210.47, 230.14, 234.66, 262.8, 310.06, 319.61, 328.49, 342.13, 358.35, 381.31, 1486.56, 1488.48, 1489.81, 1490.11, 1494.92, 1496.16, 3538.6, 3538.73, 3540.74, 3542.22, 3542.49, 3543.08, 3570.35, 3577.42, 3580.05, 3581.11, 3586.05, 3587.69]}
+
+## File map
+
+- `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/gwh` constrained GWH workdirs
+- `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs` free opt + Hessian
+- `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/provenance` copied packing.vecfle, commands, environment
+- `/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/pilot_summary.json` machine-readable copy of this report's numbers
+

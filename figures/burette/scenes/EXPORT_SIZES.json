@@ -1,0 +1,37 @@
+{
+  "figures/burette/comparisons/Fig_K06_Pilot_ensemble.png": {
+    "w": 6849,
+    "h": 7200,
+    "bytes": 1788479
+  },
+  "figures/burette/coordination/Fig_K06_Pilot_frame_000_minus_shell.png": {
+    "w": 7200,
+    "h": 6807,
+    "bytes": 997900
+  },
+  "figures/burette/coordination/Fig_K06_Pilot_frame_000_plus_shell.png": {
+    "w": 6207,
+    "h": 7200,
+    "bytes": 1753891
+  },
+  "figures/burette/coordination/Fig_K06_Pilot_frame_001_shell.png": {
+    "w": 6879,
+    "h": 7200,
+    "bytes": 1450273
+  },
+  "figures/burette/structures/Fig_K06_Pilot_frame_000_minus_overview.png": {
+    "w": 7200,
+    "h": 6807,
+    "bytes": 997900
+  },
+  "figures/burette/structures/Fig_K06_Pilot_frame_000_plus_overview.png": {
+    "w": 6207,
+    "h": 7200,
+    "bytes": 1753891
+  },
+  "figures/burette/structures/Fig_K06_Pilot_frame_001_overview.png": {
+    "w": 6879,
+    "h": 7200,
+    "bytes": 1450273
+  }
+}

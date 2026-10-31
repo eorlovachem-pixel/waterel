@@ -1,0 +1,525 @@
+{
+  "emin_Eh": -30.517135487228,
+  "records": [
+    {
+      "id": "frame_001",
+      "label": "frame_001",
+      "origin": "free optimization of GWH structure 0001",
+      "energy_Eh": -30.517135487228,
+      "opt_converged": true,
+      "normal_termination": true,
+      "n_atoms": 19,
+      "formula": {
+        "K": 1,
+        "O": 6,
+        "H": 12
+      },
+      "xyz_sha256": "cbd2d5f4b8cfcc03bccf4e9f938707c7c1fe9d5725135f7c7f9de990e4f43450",
+      "xyz_path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/xtbopt.xyz",
+      "opt_log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/xtb.out",
+      "hess_log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_001/hess/xtb_hess.out",
+      "n_frequencies": 57,
+      "n_significant_imaginary": 0,
+      "n_near_zero": 6,
+      "lowest_vibrational_cm1": 31.12,
+      "near_zero_cm1": [
+        -0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "g98_n_modes": 51,
+      "geometry": {
+        "n_water": 6,
+        "n_hydrogen": 12,
+        "distance_min_A": 2.61462195066254,
+        "distance_mean_A": 2.637774232959741,
+        "distance_max_A": 2.675199680243075,
+        "distance_std_A": 0.026540747999255612,
+        "water_connectivity": "nominal_2H_per_O",
+        "orientation_cos_mean": 0.9993638863124416,
+        "orientation_cos_min": 0.9988824228751083,
+        "orientation_cos_max": 0.9999751474526831,
+        "orientation_cos_values": "0.99902024;0.99995359;0.99930554;0.99997515;0.99888242;0.99904638"
+      },
+      "xtbopt_comment": " energy: -30.517135487228 gnorm: 0.000248832334 xtb: 6.7.1 (edcfbbe)",
+      "delta_kcal_mol": 0.0,
+      "cocos_group": 0
+    },
+    {
+      "id": "frame_000_minus",
+      "label": "frame_000/mode_follow/minus",
+      "origin": "frame_000 imaginary-mode displacement -0.15 A, reoptimized",
+      "energy_Eh": -30.517100856916,
+      "opt_converged": true,
+      "normal_termination": true,
+      "n_atoms": 19,
+      "formula": {
+        "K": 1,
+        "O": 6,
+        "H": 12
+      },
+      "xyz_sha256": "7497af13f32b6b578d9ee57b0b66d8c5c5e2caf13818615131e6971ca51a1688",
+      "xyz_path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow/minus_0.15A/opt/xtbopt.xyz",
+      "opt_log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow/minus_0.15A/opt/xtb.out",
+      "hess_log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow/minus_0.15A/hess/xtb_hess.out",
+      "n_frequencies": 57,
+      "n_significant_imaginary": 0,
+      "n_near_zero": 6,
+      "lowest_vibrational_cm1": 23.62,
+      "near_zero_cm1": [
+        -0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "g98_n_modes": 51,
+      "geometry": {
+        "n_water": 6,
+        "n_hydrogen": 12,
+        "distance_min_A": 2.6295164694305897,
+        "distance_mean_A": 2.647138075558581,
+        "distance_max_A": 2.7028194146266795,
+        "distance_std_A": 0.026193056435550855,
+        "water_connectivity": "nominal_2H_per_O",
+        "orientation_cos_mean": 0.9998108747240595,
+        "orientation_cos_min": 0.9995640306198875,
+        "orientation_cos_max": 0.9999139997697248,
+        "orientation_cos_values": "0.99988227;0.99991400;0.99983544;0.99984768;0.99956403;0.99982183"
+      },
+      "xtbopt_comment": " energy: -30.517100856916 gnorm: 0.000338756303 xtb: 6.7.1 (edcfbbe)",
+      "delta_kcal_mol": 0.021730848870468323,
+      "cocos_group": 0
+    },
+    {
+      "id": "frame_000_plus",
+      "label": "frame_000/mode_follow/plus",
+      "origin": "frame_000 imaginary-mode displacement +0.15 A, reoptimized",
+      "energy_Eh": -30.517067438374,
+      "opt_converged": true,
+      "normal_termination": true,
+      "n_atoms": 19,
+      "formula": {
+        "K": 1,
+        "O": 6,
+        "H": 12
+      },
+      "xyz_sha256": "e244b557a8b486765c47e91a7473df1eb45663e348a2fa2df4261927f1602ec4",
+      "xyz_path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow/plus_0.15A/opt/xtbopt.xyz",
+      "opt_log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow/plus_0.15A/opt/xtb.out",
+      "hess_log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/xtb_runs/frame_000/mode_follow/plus_0.15A/hess/xtb_hess.out",
+      "n_frequencies": 57,
+      "n_significant_imaginary": 0,
+      "n_near_zero": 6,
+      "lowest_vibrational_cm1": 22.12,
+      "near_zero_cm1": [
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "g98_n_modes": 51,
+      "geometry": {
+        "n_water": 6,
+        "n_hydrogen": 12,
+        "distance_min_A": 2.646465433218734,
+        "distance_mean_A": 2.660332784844228,
+        "distance_max_A": 2.705872015504199,
+        "distance_std_A": 0.020564947244700076,
+        "water_connectivity": "nominal_2H_per_O",
+        "orientation_cos_mean": 0.9995469494295222,
+        "orientation_cos_min": 0.999214585107862,
+        "orientation_cos_max": 0.9999329406134027,
+        "orientation_cos_values": "0.99983281;0.99993294;0.99921459;0.99933948;0.99958906;0.99937282"
+      },
+      "xtbopt_comment": " energy: -30.517067438374 gnorm: 0.000220141385 xtb: 6.7.1 (edcfbbe)",
+      "delta_kcal_mol": 0.042701300584500446,
+      "cocos_group": 0
+    }
+  ],
+  "cocos_primary": {
+    "seed": 20261030,
+    "samples": 50,
+    "returncode": 0,
+    "added_indices": [
+      0
+    ],
+    "n_unique": 1,
+    "n_added_log": 1,
+    "removed": [
+      {
+        "structure": 1,
+        "copy_of": 0
+      },
+      {
+        "structure": 2,
+        "copy_of": 0
+      }
+    ],
+    "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_primary/H12KO6_quick_cleanup.trj",
+    "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_primary/cocos_log.txt",
+    "cmd": [
+      "/usr/bin/python3",
+      "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+      "20261030",
+      "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+      "-f",
+      "free_sorted_for_cocos.xyz",
+      "--DoNotUseGlobalOpt",
+      "--NumSamples",
+      "50",
+      "--DoNotSaveDoubles"
+    ]
+  },
+  "cocos_robustness": [
+    {
+      "seed": 20261030,
+      "samples": 50,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_primary/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_primary/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "20261030",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "50",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 101,
+      "samples": 50,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed101/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed101/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "101",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "50",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 202,
+      "samples": 50,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed202/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed202/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "202",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "50",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 303,
+      "samples": 50,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed303/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed303/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "303",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "50",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 7,
+      "samples": 50,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed7/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N50_seed7/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "7",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "50",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 20261030,
+      "samples": 100,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed20261030/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed20261030/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "20261030",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "100",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 101,
+      "samples": 100,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed101/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed101/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "101",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "100",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 202,
+      "samples": 100,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed202/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed202/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "202",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "100",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 303,
+      "samples": 100,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed303/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed303/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "303",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "100",
+        "--DoNotSaveDoubles"
+      ]
+    },
+    {
+      "seed": 7,
+      "samples": 100,
+      "returncode": 0,
+      "added_indices": [
+        0
+      ],
+      "n_unique": 1,
+      "n_added_log": 1,
+      "removed": [
+        {
+          "structure": 1,
+          "copy_of": 0
+        },
+        {
+          "structure": 2,
+          "copy_of": 0
+        }
+      ],
+      "cleanup_trj": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed7/H12KO6_quick_cleanup.trj",
+      "log": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/results/K_06/pilot_2/postprocess_confirmed_minima/cocos_sensitivity/N100_seed7/cocos_log.txt",
+      "cmd": [
+        "/usr/bin/python3",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/seeded_cocos.py",
+        "7",
+        "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/code/cocos_uploaded_snapshot.py",
+        "-f",
+        "free_sorted_for_cocos.xyz",
+        "--DoNotUseGlobalOpt",
+        "--NumSamples",
+        "100",
+        "--DoNotSaveDoubles"
+      ]
+    }
+  ],
+  "cocos_sha256": "4c538fb83812cef33a81db25de9b973d258e781c75703d959e7e2966ad4e7cbc",
+  "fixed_seed": 20261030,
+  "fixed_samples": 50
+}

@@ -1,0 +1,27 @@
+{
+  "source_sha256": "c6d9a8bbe2c29a2736e40266a95aa6c1c376aac70a7ddb82d82b10ff5fbabf1a",
+  "source_energy_csv_sha256": "bcd5b0d9d6ebde6e3b459e7b34104535db351bbaa078d1073c1c484f168b6959",
+  "source": "../source/constrained_multiframe.xyz",
+  "charge": 1,
+  "method": "GFN2-xTB",
+  "solvent": "ALPB(water)",
+  "optimization": "unconstrained tight",
+  "central": "K",
+  "input_count": 2,
+  "entries": [
+    {
+      "id": "frame_000",
+      "index": 0,
+      "constrained_energy_Eh": -30.514932790359,
+      "source_run_id": "gwh_opt_str0000",
+      "input_sha256": "f8c669a86ee00d66de4f38aafbe769398224c3e4bcfd5c5ad107b564ef9ce792"
+    },
+    {
+      "id": "frame_001",
+      "index": 1,
+      "constrained_energy_Eh": -30.514937134382,
+      "source_run_id": "gwh_opt_str0001",
+      "input_sha256": "efb854abb9d4e7308f39f24ad62eb184ae897bcfbeaae4f24a4ce603ecb7367d"
+    }
+  ]
+}

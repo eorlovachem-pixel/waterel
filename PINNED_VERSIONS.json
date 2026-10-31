@@ -1,0 +1,59 @@
+{
+  "timestamp_UTC": "2026-10-30T12:32:47.651306+00:00",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.7+dfsg1",
+    "pytest": "9.2.0"
+  },
+  "gwh": {
+    "url": "https://gitlab.com/madschumacher/glorious-water-hole",
+    "sha": "7411811374b6422a15f23d6d86a47f2145f8ac47",
+    "log1": "7411811374b6422a15f23d6d86a47f2145f8ac47 2026-10-30 09:13:59 +0100 fixed Euler angles definition"
+  },
+  "cocos": {
+    "url": "https://gitlab.com/madschumacher/cocoso",
+    "sha": "47f6680da2eee90d9b18536fd94d2bc8f6d05aad",
+    "file_sha256": "4c538fb83812cef33a81db25de9b973d258e781c75703d959e7e2966ad4e7cbc"
+  },
+  "mdatom": {
+    "url": "https://gitlab.com/madschumacher/mdatomlocalenvironment",
+    "sha": "3c43de70abef1f64fb31a2fe2693e4e73b88083c"
+  },
+  "xtb_source": {
+    "url": "https://github.com/grimme-lab/xtb",
+    "tag": "v6.7.1",
+    "sha": "26b28010e805f7d1aeeef39813feb473e69cc4be"
+  },
+  "xtb_runtime": {
+    "path": "/home/antiz/xtb-standalone/xtb-dist/bin/xtb",
+    "sha256": "debf27a9e0fa4bfb5ca75aafe4b90d8211f08ec2f4a482f375a4987212eaa12a",
+    "version_note": "6.7.1 (edcfbbe) Intel-static GitHub release"
+  },
+  "xtb_system_do_not_use_for_opt": {
+    "path": "/usr/bin/xtb",
+    "note": "Ubuntu package, libgfortran 16, ANCOPT format crash"
+  },
+  "k06_vecfle_sha256": "06ff2c3bf4b43e0d0382a684539dd5b3edf8e618500c857b9d4aa045700a11e5",
+  "existing_Li07_used_old_gwh": "bfc474c0ea56c1d0c9cfae6285deac9aff065dff",
+  "preflight_summary": {
+    "usable_for_free_optimization": true,
+    "root": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/preflight_runs/20261030T123146Z",
+    "system_xtb_format_crash": true,
+    "standalone_water_opt_Eh": -5.070544439828,
+    "standalone_k_water_alpb_opt_Eh": -5.018148372723,
+    "water_hess_ok": true,
+    "k_water_hess_ok": true
+  },
+  "burette": {
+    "url": "https://github.com/SergeiNikolenko/Burette",
+    "head": "ba8171ec5bc0315bb3ace11cf2374ee908b67728",
+    "note": "macOS app; not run on this Windows/WSL host"
+  },
+  "xyzrender": {
+    "version": "0.3.8",
+    "path": "/home/antiz/.local/bin/xyzrender",
+    "role": "Burette-documented XYZ fallback renderer; not Burette.app"
+  }
+}
