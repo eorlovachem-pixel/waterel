@@ -28,3 +28,5 @@ K⁺(H₂O)₆, GFN2-xTB/ALPB(water):
 5. Confirmation that the K₆ **pilot** geometries and figures may stay in the public `waterel` repository.
 
 Until (1) and (5) are explicit, production chemistry stays blocked and unpublished co-author series are not pushed.
+
+Public `waterel` after the 2026-11-01 audit contains the K₆ **pilot** (2 GWH starts, 3 Hessian-confirmed minima, figures) plus code/tests/docs. `pilots/Li_07` and vendor trees are not in Git. See `CLEANUP_REPORT.md`.

@@ -1,5 +1,13 @@
 # Changelog (2026-10-31)
 
+## Final audit / cleanup (2026-11-01)
+
+- Backed up the Linux kit to `/home/antiz/hydration-research/_backups/` (outside this Git tree).
+- Archived unused session helpers (`tools/finish_git.py`, `tools/git_waterel.py`, `tools/wsl_go.py`, `tools/run_all.py`, `tools/apply_cleanup.py`, `_sync_pipeline_to_linux.py`) to a local archive; they are not imported by `workflow.py` / `pipeline.py` / tests.
+- Regenerable caches (`__pycache__`, `.pytest_cache`) removed. Unique XYZ, packing files, Hessians, logs, CoCoS, MDAtom, figures, and original kit files were kept.
+- `SHA256SUMS.txt` now covers published paths only (not `vendors/`, `cases/`, `pilots/`, `archive/`).
+- Details: `CLEANUP_REPORT.md`.
+
 ## Pipeline extension (same modules, no alternate pipeline)
 
 - Code now accepts cations Li/Na/K/Rb (`--chrg 1`) and anions F/Cl/Br (`--chrg -1`) via `qc_checks.protocol_charge`. **No anion or Na/Rb rows added to `CASE_STATUS.csv`.**
@@ -27,7 +35,7 @@
 - `results/K_06/pilot_2_pipeline_check/` (pipeline replay copy + duplicated CoCoS inputs) moved to the same backup. Stub `PIPELINE_CHECK_SUMMARY.json` left in place.
 - Canonical data **untouched**: `results/K_06/pilot_2/` (XYZ, xtb logs, Hessian, provenance), `inputs/*.vecfle`, `pilots/`, `cases/`.
 - `CASE_STATUS.json` regenerated from `CASE_STATUS.csv` (CSV is source of truth).
-- Sync helper lives in `tools/sync_to_linux.py`. Root `_sync_pipeline_to_linux.py` is a compatibility wrapper.
+- Sync helper lives in `tools/sync_to_linux.py`.
 - Added `.gitignore` for `__pycache__`, pytest cache, generated environment report, backup trees.
 
 ## Compatibility

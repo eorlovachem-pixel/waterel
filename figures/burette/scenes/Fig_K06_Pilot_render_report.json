@@ -7,63 +7,15 @@
     "burette_app_available": false,
     "burette_app_reason": "Burette.app is a macOS 12+ Apple Silicon desktop application (Homebrew cask SergeiNikolenko/burette). This host is Windows/WSL. Finder Quick Look, the Codex plugin, and the iPhone target do not run in Cursor on Windows. The public browser demo is a preview surface, not a headless exporter; screenshots would include UI chrome, which is forbidden for publication figures.",
     "xyzrender_role": "Burette documents xyzrender as the XYZ fallback renderer (https://github.com/SergeiNikolenko/Burette README, External xyzrender). CLI exports from xyzrender are labeled renderer=xyzrender, not Burette.app.",
-    "xyzrender_path": "/home/antiz/.local/bin/xyzrender",
-    "checked_utc": "2026-10-31T00:48:02.027814+00:00"
+    "xyzrender_path": null,
+    "checked_utc": "2026-10-31T23:20:48.146542+00:00"
   },
   "n_geometries": 3,
-  "n_successful_exports": 12,
+  "n_successful_exports": 0,
   "overlay": {
-    "xyz": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/scenes/Fig_K06_Pilot_ensemble.xyz",
-    "products": [
-      {
-        "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/comparisons/Fig_K06_Pilot_ensemble.svg",
-        "ok": true,
-        "returncode": 0,
-        "renderer": "xyzrender",
-        "cmd": [
-          "/home/antiz/.local/bin/xyzrender",
-          "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/scenes/Fig_K06_Pilot_ensemble.xyz",
-          "-o",
-          "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/comparisons/Fig_K06_Pilot_ensemble.svg",
-          "--config",
-          "tube",
-          "-S",
-          "2400",
-          "--hy",
-          "--no-orient",
-          "-B",
-          "white",
-          "--ensemble",
-          "--hl",
-          "M",
-          "#5b2c6f"
-        ]
-      },
-      {
-        "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/comparisons/Fig_K06_Pilot_ensemble.png",
-        "ok": true,
-        "returncode": 0,
-        "renderer": "xyzrender",
-        "cmd": [
-          "/home/antiz/.local/bin/xyzrender",
-          "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/scenes/Fig_K06_Pilot_ensemble.xyz",
-          "-o",
-          "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/comparisons/Fig_K06_Pilot_ensemble.png",
-          "--config",
-          "tube",
-          "-S",
-          "2400",
-          "--hy",
-          "--no-orient",
-          "-B",
-          "white",
-          "--ensemble",
-          "--hl",
-          "M",
-          "#5b2c6f"
-        ]
-      }
-    ]
+    "ok": false,
+    "reason": "xyzrender CLI not on PATH",
+    "xyz": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/scenes/Fig_K06_Pilot_ensemble.xyz"
   },
   "index": [
     {
@@ -76,10 +28,10 @@
       "energy_Eh": -30.517135487228,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_001_overview.svg",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -92,10 +44,10 @@
       "energy_Eh": -30.517135487228,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_001_overview.png",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -108,10 +60,10 @@
       "energy_Eh": -30.517135487228,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/coordination/Fig_K06_Pilot_frame_001_shell.svg",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -124,10 +76,10 @@
       "energy_Eh": -30.517135487228,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/coordination/Fig_K06_Pilot_frame_001_shell.png",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -140,10 +92,10 @@
       "energy_Eh": -30.517100856916,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_000_minus_overview.svg",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -156,10 +108,10 @@
       "energy_Eh": -30.517100856916,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_000_minus_overview.png",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -172,10 +124,10 @@
       "energy_Eh": -30.517100856916,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/coordination/Fig_K06_Pilot_frame_000_minus_shell.svg",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -188,10 +140,10 @@
       "energy_Eh": -30.517100856916,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/coordination/Fig_K06_Pilot_frame_000_minus_shell.png",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -204,10 +156,10 @@
       "energy_Eh": -30.517067438374,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_000_plus_overview.svg",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -220,10 +172,10 @@
       "energy_Eh": -30.517067438374,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/structures/Fig_K06_Pilot_frame_000_plus_overview.png",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -236,10 +188,10 @@
       "energy_Eh": -30.517067438374,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/coordination/Fig_K06_Pilot_frame_000_plus_shell.svg",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     },
     {
@@ -252,10 +204,10 @@
       "energy_Eh": -30.517067438374,
       "cocos_group": 0,
       "CN": null,
-      "renderer": "xyzrender",
+      "renderer": "NONE",
       "burette_app": false,
       "file": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/figures/burette/coordination/Fig_K06_Pilot_frame_000_plus_shell.png",
-      "ok": true,
+      "ok": false,
       "export": "canvas=2400px config=tube PNG/SVG"
     }
   ]

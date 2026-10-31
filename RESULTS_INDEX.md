@@ -1,6 +1,6 @@
 # Results index
 
-Generated: 2026-10-31T00:48:54.562938+00:00
+Generated: 2026-10-31T23:20:57.812942+00:00
 
 ## What was actually calculated
 
@@ -29,3 +29,5 @@ See `figures/FIGURE_INDEX.md`.
 
 n_freq_confirmed = 3
 n_cocos_groups = 1
+
+File hashes for published paths: `SHA256SUMS.txt`. Cleanup of unused session helpers: `CLEANUP_REPORT.md`. No additional QC beyond this K6 pilot.

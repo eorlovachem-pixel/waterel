@@ -41,5 +41,5 @@
     "macos": "Open original.xyz in Burette.app (Mol* or xyzrender renderer).",
     "windows_wsl": "Burette.app not available; use xyzrender CLI on aligned_for_view.xyz."
   },
-  "created_utc": "2026-10-31T00:48:02.029271+00:00"
+  "created_utc": "2026-10-31T23:20:48.147724+00:00"
 }

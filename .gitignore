@@ -11,5 +11,3 @@ preflight_runs/
 venv/
 cases/
 pilots/
-tools/wsl_go.py
-tools/git_waterel.py

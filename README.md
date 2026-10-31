@@ -64,3 +64,7 @@ The K first-shell cutoff **3.20 Å** is an engineering default (`BLOCKING_UNCONF
 ## Tests
 
 GitHub Actions runs `pytest tests` on Ubuntu (no xTB). Locally the same suite covers xTB log parsing, Hessians, CoCoS confirmed-only logic, anion charge, shell descriptors, and visualizer XYZ integrity.
+
+## Repository contents
+
+Public `waterel` is this kit after the 2026-11-01 audit (`CLEANUP_REPORT.md`, `SHA256SUMS.txt`). Session-only Git/WSL helpers were archived locally and are not in Git. Vendor checkouts, `cases/`, `pilots/`, and previous cleanup backups stay on the Linux workstation (gitignored). No new quantum-chemical jobs were launched for the cleanup.

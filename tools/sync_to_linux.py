@@ -47,9 +47,7 @@ FILES = [
     "PINNED_VERSIONS.md",
     "run_k06_pilot_2.py",
     "SHA256SUMS.txt",
-    "_sync_pipeline_to_linux.py",
     "tools/sync_to_linux.py",
-    "tools/apply_cleanup.py",
     ".gitignore",
 ]
 

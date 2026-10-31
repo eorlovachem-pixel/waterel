@@ -1,6 +1,6 @@
 # Figure index
 
-Generated: 2026-10-31T00:48:54.561793+00:00
+Generated: 2026-10-31T23:20:57.812080+00:00
 
 ## Renderer policy
 
@@ -22,7 +22,7 @@ Generated: 2026-10-31T00:48:54.561793+00:00
 | anion X···H (if drawn) | dashed teal |
 
 xyzrender exports found: 7 PNG, 7 SVG.
-xyzrender on PATH at generation: `/home/antiz/.local/bin/xyzrender`
+xyzrender on PATH at generation: `None`
 
 ## Geometry-backed figures
 
