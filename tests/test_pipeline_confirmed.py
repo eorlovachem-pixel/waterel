@@ -167,12 +167,24 @@ def test_resolve_xtb_uses_explicit_file_not_system(tmp_path, monkeypatch):
     fake = tmp_path / "xtb"
     fake.write_text("#!/bin/sh\n", encoding="utf-8")
     fake.chmod(0o755)
+    monkeypatch.setattr(
+        qc_checks, "standalone_xtb_candidates",
+        lambda root=None: [fake],
+    )
     got = qc_checks.resolve_working_xtb(str(fake), kit=tmp_path)
     assert got == fake.resolve()
     monkeypatch.delenv("XTB_BIN", raising=False)
     monkeypatch.setenv("PATH", "/usr/bin")
     resolved = qc_checks.resolve_working_xtb(None, kit=tmp_path)
+    assert resolved == fake.resolve()
     assert not qc_checks.is_system_xtb(resolved)
+    monkeypatch.setattr(
+        qc_checks, "standalone_xtb_candidates",
+        lambda root=None: [tmp_path / "nope" / "xtb"],
+    )
+    monkeypatch.setenv("PATH", str(tmp_path / "empty_path"))
+    with pytest.raises(RuntimeError, match="unavailable"):
+        qc_checks.resolve_working_xtb(None, kit=tmp_path)
 
 
 def test_resolve_xtb_raises_when_nothing_usable(tmp_path, monkeypatch):
