@@ -113,7 +113,7 @@ def export_k06():
     copy_if(PILOT / "source" / "constrained_multiframe.xyz", dest / "gwh" / "constrained_multiframe.xyz")
 
     rows = []
-    frames_final = []
+    frames_all = []
     mdatom_note = dest / "environment" / "MDAtomLocalEnvironment_STATUS.txt"
     mdatom_log = PILOT / "postprocess_confirmed_minima" / "MDAtomLocalEnvironment.log"
     if mdatom_log.is_file():
@@ -165,7 +165,7 @@ def export_k06():
             **SD.csv_row(desc),
         }
         rows.append(row)
-        frames_final.append({
+        frames_all.append({
             "symbols": fr["symbols"],
             "xyz": fr["xyz"],
             "comment": (
@@ -174,8 +174,23 @@ def export_k06():
             ),
         })
 
+    # CONFIRMED is energy-sorted; first member of each CoCoS group is the representative.
+    seen_groups = set()
+    unique_frames = []
+    unique_rows = []
+    for row, frame in zip(rows, frames_all):
+        g = row["cocos_group"]
+        if g in seen_groups:
+            continue
+        seen_groups.add(g)
+        unique_frames.append(frame)
+        unique_rows.append(row)
+
     P.write_csv(dest / "final" / "descriptors.csv", rows)
-    P.write_xyz(dest / "final" / "unique_representatives.xyz", frames_final)
+    P.write_csv(dest / "final" / "unique_descriptors.csv", unique_rows)
+    P.write_xyz(dest / "final" / "confirmed_minima.xyz", frames_all)
+    P.write_xyz(dest / "final" / "all_group_members.xyz", frames_all)
+    P.write_xyz(dest / "final" / "unique_representatives.xyz", unique_frames)
     (dest / "final" / "manifest.json").write_text(json.dumps({
         "ion": "K",
         "n_water": 6,
@@ -183,8 +198,9 @@ def export_k06():
         "method": "GFN2-xTB / ALPB(water)",
         "n_gwh_starts": 2,
         "n_freq_confirmed": 3,
-        "n_cocos_groups": 1,
-        "cocos_note": "All three confirmed minima belong to CoCoS group 0; representative is frame_001.",
+        "n_cocos_groups": len(unique_frames),
+        "unique_representative_ids": [r["id"] for r in unique_rows],
+        "cocos_note": "All three confirmed minima belong to CoCoS group 0; unique_representatives.xyz holds only the lowest-energy member (frame_001). all_group_members.xyz and confirmed_minima.xyz hold every confirmed geometry.",
         "cn_cut_status": SD.CN_CUT_STATUS,
         "cn_cut_A": SD.CN_CUT_PROVISIONAL_A["K"],
         "pilot_original": "results/K_06/pilot_2",
@@ -192,3 +208,28 @@ def export_k06():
         "rows": rows,
     }, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     return dest, rows
+
+
+def export_case(case: str):
+    """Export one CASE_STATUS case. K_06 uses the frozen pilot; others need cases/{CASE}."""
+    import csv as _csv
+    with (ROOT / "CASE_STATUS.csv").open(encoding="utf-8") as fh:
+        rows = {r["case"]: r for r in _csv.DictReader(fh)}
+    if case not in rows:
+        raise ValueError(f"unknown case {case}")
+    if case == "K_06":
+        return export_k06()
+    src = ROOT / "cases" / case
+    if not src.is_dir():
+        raise FileNotFoundError(
+            f"{src} does not exist. Production results are not exported until the case is assigned and run."
+        )
+    row = rows[case]
+    dest = ROOT / "results" / row["ion"] / str(int(row["n_water"]))
+    dest.mkdir(parents=True, exist_ok=True)
+    (dest / "SOURCE.txt").write_text(f"Copied from {src}\n", encoding="utf-8")
+    return dest, []
+
+
+if __name__ == "__main__":
+    export_k06()

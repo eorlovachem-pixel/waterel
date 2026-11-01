@@ -92,10 +92,18 @@ def test_matplotlib_does_not_draw_ion_oxygen_as_covalent():
     assert len(coords) == 1
 
 
-def test_case_status_has_no_anion_or_na_rb_rows():
+def test_case_status_cl_br_not_assigned_no_na_rb_f():
     import csv
     with (ROOT / "CASE_STATUS.csv").open(encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     ions = {r["ion"] for r in rows}
-    assert ions <= {"Li", "K"}
-    assert not {"F", "Cl", "Br", "Na", "Rb"} & ions
+    assert {"Cl", "Br"} <= ions
+    assert not {"F", "Na", "Rb"} & ions
+    anion = [r for r in rows if r["ion"] in ("Cl", "Br")]
+    assert {r["case"] for r in anion} == {
+        f"{ion}_{n:02d}" for ion in ("Cl", "Br") for n in range(4, 15)
+    }
+    for row in anion:
+        assert row["assignment_status"] == "NOT_ASSIGNED"
+        assert int(row["charge"]) == -1
+        assert int(row["n_start_target"]) == 100

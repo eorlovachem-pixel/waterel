@@ -1,0 +1,26 @@
+{
+  "unique_n": 1,
+  "confirmed_n": 3,
+  "gates": {
+    "Cl_04": {
+      "returncode": 1,
+      "refused": true,
+      "snippet": "~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py\", line 43, in require_launch_allowed\n    raise RuntimeError(\n    ...<3 lines>...\n    )\nRuntimeError: Cl_04 assignment_status=NOT_ASSIGNED. Do not start GWH/opt/hess/refine/CoCoS until Denis assigns this case. ALLOW_FULL_BATCH is not sufficient. After confirmation set DENIS_ASSIGNED=yes."
+    },
+    "K_06": {
+      "returncode": 1,
+      "refused": true,
+      "snippet": "  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py\", line 43, in require_launch_allowed\n    raise RuntimeError(\n    ...<3 lines>...\n    )\nRuntimeError: K_06 assignment_status=ON_HOLD. Do not start GWH/opt/hess/refine/CoCoS until Denis assigns this case. ALLOW_FULL_BATCH is not sufficient. After confirmation set DENIS_ASSIGNED=yes."
+    },
+    "Br_04": {
+      "returncode": 1,
+      "refused": true,
+      "snippet": "~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py\", line 43, in require_launch_allowed\n    raise RuntimeError(\n    ...<3 lines>...\n    )\nRuntimeError: Br_04 assignment_status=NOT_ASSIGNED. Do not start GWH/opt/hess/refine/CoCoS until Denis assigns this case. ALLOW_FULL_BATCH is not sufficient. After confirmation set DENIS_ASSIGNED=yes."
+    }
+  },
+  "oauth_clients": [],
+  "upload_drive": {
+    "returncode": 1,
+    "out": "pi-python-client / google-auth-oauthlib not installed. Local staging is complete; install the libraries to upload.\nNo module named 'google'\nTraceback (most recent call last):\n  File \"/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py\", line 512, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py\", line 510, in main\n    x=p.parse_args();x.func(x)\n                     ~~~~~~^^^\n  File \"/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/workflow.py\", line 436, in upload_drive\n    raise RuntimeError('Drive upload did not complete. Staging remains in drive_staging/.')\nRuntimeError: Drive upload did not complete. Staging remains in drive_staging/.\n"
+  }
+}

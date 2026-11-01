@@ -1,6 +1,6 @@
 # Figure index
 
-Generated: 2026-10-31T23:20:57.812080+00:00
+Generated: 2026-11-01T11:01:21.507014+00:00
 
 ## Renderer policy
 
@@ -8,7 +8,7 @@ Generated: 2026-10-31T23:20:57.812080+00:00
 - Reason: Burette.app is a macOS 12+ Apple Silicon desktop application (Homebrew cask SergeiNikolenko/burette). This host is Windows/WSL. Finder Quick Look, the Codex plugin, and the iPhone target do not run in Cursor on Windows. The public browser demo is a preview surface, not a headless exporter; screenshots would include UI chrome, which is forbidden for publication figures.
 - **xyzrender** is Burette's documented XYZ fallback renderer. Files under `figures/burette/` produced by the xyzrender CLI are labeled `renderer=xyzrender`, not Burette.app.
 - **Matplotlib** ball-and-stick and numerical plots live under `figures/publication/` and are labeled as Matplotlib.
-- No dummy Li/Na/Rb/F/Cl/Br structures were drawn.
+- No dummy Li/Na/Rb/F/Cl/Br structures were drawn. Cl/Br packings exist; no anion QC XYZ.
 
 ## Atom colour legend (ball-and-stick)
 
@@ -38,7 +38,7 @@ xyzrender on PATH at generation: `None`
 
 ## Not generated (no calculated structures)
 
-- `Fig_Structures_Anions` — no F−/Cl−/Br− XYZ in this kit.
+- `Fig_Structures_Anions` — Cl/Br packings exist; no frequency-confirmed anion XYZ.
 - `R(n)`, `CN(n)`, `<cosθ>(n)` series — only n = 6 exists.
 
 ## Per-geometry scenes

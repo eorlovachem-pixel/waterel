@@ -8,7 +8,8 @@ Live pins from Ubuntu WSL on 2026-10-30. Machine-readable copy: `PINNED_VERSIONS
 | xTB source tag | v6.7.1 = `26b28010e805f7d1aeeef39813feb473e69cc4be` |
 | xTB **runtime** | Intel-static `~/xtb-standalone/xtb-dist/bin/xtb`, reports **6.7.1 (edcfbbe)**, SHA256 `debf27a9e0fa4bfb5ca75aafe4b90d8211f08ec2f4a482f375a4987212eaa12a` |
 | `/usr/bin/xtb` | 6.7.1 (unknown), libgfortran 16 — **ANCOPT crash, do not use for `--opt`** |
-| Python | 3.14.4; numpy 2.3.5; scipy 1.16.3; matplotlib 3.10.7+dfsg1; pytest 9.2.0 |
+| Python | 3.14.4; numpy 2.3.5; scipy 1.16.3; matplotlib 3.10.7+dfsg1; pytest 9.2.0; mendeleev 1.3.0 (anion packing radii) |
+| Sloane dim-3 | https://neilsloane.com/packings/dim3/ `pack.3.n.txt` for n=4–14 (new Cl/Br/K_04/K_05 directions) |
 | K_06 packing.vecfle | SHA256 `06ff2c3bf4b43e0d0382a684539dd5b3edf8e618500c857b9d4aa045700a11e5` |
 
 Existing `cases/Li_07` and `pilots/Li_07` were run with GWH `bfc474c` (old `zyx`). Do not mix or overwrite.

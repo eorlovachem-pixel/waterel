@@ -37,8 +37,9 @@ SUPPORTED_IONS = SUPPORTED_CATIONS + SUPPORTED_ANIONS
 PROTOCOL_CHARGE = 1
 PROTOCOL_CHARGE_CATION = 1
 PROTOCOL_CHARGE_ANION = -1
-# Radii taken only from packing files in this kit. Na/Rb/anion radii are not invented.
-KNOWN_INITIAL_M_O_A = {"Li": 2.42, "K": 3.04}
+# Radii taken from packing files in this kit. Na/Rb/F radii are not invented.
+# Cl/Br: mendeleev 1.3.0 X-(VI) + O2-(VI), pm/100, documented in inputs/ANION_PACKING_PROVENANCE.json.
+KNOWN_INITIAL_M_O_A = {"Li": 2.42, "K": 3.04, "Cl": 3.21, "Br": 3.36}
 SYSTEM_XTB = Path("/usr/bin/xtb")
 SCIPY_FROM_EULER_DOCS = (
     "SciPy Rotation.from_euler: seq in {'X','Y','Z'} is intrinsic (body-fixed); "

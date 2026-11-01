@@ -6,7 +6,7 @@ This is a record of what is **in this kit**. It is not an assignment. `ON_HOLD` 
 
 | Source | Finding |
 | --- | --- |
-| `CASE_STATUS.csv` | `K_06` = `ON_HOLD`. Li_07–14 and K_07–14 = `NOT_ASSIGNED`. No `ASSIGNED` rows. No Na/Rb rows. |
+| `CASE_STATUS.csv` | `K_06` = `ON_HOLD`. Li_07–14, K_04–05, K_07–14, Cl_04–14, Br_04–14 = `NOT_ASSIGNED`. No `ASSIGNED` rows. No Na/Rb/F rows. |
 | `CASE_STATUS.json` | Regenerated from the CSV so both files match. CSV remains the source of truth. |
 | `ON_HOLD_AND_SCOPE.md` | Drive/chat snapshot 2026-10-30: Li 7–14 and K 6–14 “explicit allocation pending”. Rb claimed. Na verbally claimed. |
 | `CHECKS_PERFORMED.md` | “Соавторство и распределение задач не согласованы”. |
@@ -15,7 +15,7 @@ This is a record of what is **in this kit**. It is not an assignment. `ON_HOLD` 
 
 **Conclusion:** there is no confirmed Denis assignment of K_06 (or of Li_07–14 / K_07–14) in the files or vendor history available here.
 
-Na⁺ and Rb⁺ stay out of `CASE_STATUS.csv`.
+Na⁺, Rb⁺, and F⁻ stay out of `CASE_STATUS.csv`. Cl/Br and K_04/K_05 rows are technical prep (`NOT_ASSIGNED`). Production launch refuses `NOT_ASSIGNED` as well as `ON_HOLD`.
 
 ## Euler: SciPy `zyz` vs `ZYZ`
 

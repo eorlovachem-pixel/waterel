@@ -138,7 +138,8 @@ def plot_missing_series(dest: Path, plt):
         "Allowed calculated data in this kit: K+(H2O)6 pilot only "
         "(2 GWH starts, 3 Hessian-confirmed minima, 1 CoCoS group).\n"
         "R(n), <cosθ>(n) and CN(n) versus hydration number require more than one n.\n"
-        "Li+, Na+, Rb+, F−, Cl−, Br− production series are ON_HOLD / NOT_ASSIGNED / unclaimed.\n"
+        "Li+, Na+, Rb+, F− production series are ON_HOLD / NOT_ASSIGNED / unclaimed.\n"
+        "Cl−/Br− packings exist (n=4–14) but production GWH/xTB is NOT_ASSIGNED.\n"
         "No placeholder points were inserted.",
         va="top", ha="left", fontsize=11, family="DejaVu Sans",
         transform=ax.transAxes, wrap=True,

@@ -12,9 +12,9 @@ source ./env_xtb.sh
 ASSIGN=$(python3 -c "import csv; from pathlib import Path; c='$CASE';
 rows={r['case']:r for r in csv.DictReader(Path('CASE_STATUS.csv').open(encoding='utf-8'))};
 print((rows.get(c) or {}).get('assignment_status','UNKNOWN'))")
-if [[ "$ASSIGN" == "ON_HOLD" && "${DENIS_ASSIGNED:-}" != "yes" ]]; then
-  echo "Refusing $CASE: assignment_status=ON_HOLD. Denis has not assigned this case."
-  echo "ALLOW_FULL_BATCH does not bypass ON_HOLD. After confirmation: DENIS_ASSIGNED=yes ALLOW_FULL_BATCH=yes."
+if [[ "$ASSIGN" == "ON_HOLD" || "$ASSIGN" == "NOT_ASSIGNED" ]] && [[ "${DENIS_ASSIGNED:-}" != "yes" ]]; then
+  echo "Refusing $CASE: assignment_status=$ASSIGN. Denis has not assigned this case."
+  echo "ALLOW_FULL_BATCH does not bypass ON_HOLD/NOT_ASSIGNED. After confirmation: DENIS_ASSIGNED=yes ALLOW_FULL_BATCH=yes."
   exit 1
 fi
 if [[ -z "${XTB_BIN:-}" ]] || [[ ! -x "${XTB_BIN}" ]]; then

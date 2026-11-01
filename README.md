@@ -10,7 +10,9 @@ This tree is the working kit. Production 100-start series are **not** launched w
 |---|---|---|
 | K⁺(H₂O)₆ **pilot** | 2 GWH starts, 3 Hessian-confirmed minima, **1 CoCoS group** | `results/K_06/pilot_2/` (original, not rewritten) and `results/K/6/` |
 | Li⁺, Na⁺, Rb⁺ production | none in this kit | Na verbally claimed; Rb in progress elsewhere; no CASE_STATUS rows |
-| F⁻, Cl⁻, Br⁻ | none | code accepts `--chrg -1`; no packing files; no fabricated QC |
+| F⁻ | none | code accepts `--chrg -1`; no packing; no QC |
+| K⁺(H₂O)₄,₅ packings | Sloane dim-3, R=3.04 Å | `NOT_ASSIGNED`; author K_06–14 packings unchanged |
+| Cl⁻(H₂O)₄–₁₄, Br⁻(H₂O)₄–₁₄ | packings only | Sloane directions; R(Cl–O)=3.21 Å, R(Br–O)=3.36 Å from mendeleev; **NOT_ASSIGNED**; no GWH `--Opt` / xTB |
 
 Final unique XYZ: [`results/K/6/final/unique_representatives.xyz`](results/K/6/final/unique_representatives.xyz)  
 Descriptors: [`results/K/6/final/descriptors.csv`](results/K/6/final/descriptors.csv)  

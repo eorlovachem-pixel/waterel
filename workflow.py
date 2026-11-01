@@ -37,11 +37,11 @@ def select(args):
 
 
 def require_launch_allowed(args, row):
-    """Refuse ON_HOLD production chemistry. ALLOW_FULL_BATCH is not a bypass."""
+    """Refuse ON_HOLD and NOT_ASSIGNED production chemistry. ALLOW_FULL_BATCH is not a bypass."""
     status=(row.get('assignment_status') or '').strip().upper()
-    if status=='ON_HOLD' and os.environ.get('DENIS_ASSIGNED')!='yes':
+    if status in ('ON_HOLD', 'NOT_ASSIGNED') and os.environ.get('DENIS_ASSIGNED')!='yes':
         raise RuntimeError(
-            f"{args.case} assignment_status=ON_HOLD. "
+            f"{args.case} assignment_status={status}. "
             "Do not start GWH/opt/hess/refine/CoCoS until Denis assigns this case. "
             "ALLOW_FULL_BATCH is not sufficient. After confirmation set DENIS_ASSIGNED=yes."
         )
@@ -349,6 +349,109 @@ def visualize_cmd(args):
     process_existing(args)
 
 
+def _count_glob(path, pattern):
+    p=Path(path)
+    return len(list(p.glob(pattern))) if p.exists() else 0
+
+
+def write_status_json(args, extra=None):
+    row=select(args)
+    cr=case_root(args)
+    xtb=cr/'xtb_runs'
+    post=xtb/'postprocess'
+    info={
+        'case':args.case,
+        'ion':row['ion'],
+        'n_water':int(row['n_water']),
+        'charge':int(row['charge']),
+        'assignment_status':row.get('assignment_status'),
+        'timestamp_UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'gwh_ok':_count_glob(cr/'gwh','gwh_opt_str*/mol_str*_fin.xyz'),
+        'n_start_target':int(row['n_start_target']),
+        'relax_ok':_count_glob(xtb,'frame_*/xtbopt.xyz'),
+        'hess_ok':_count_glob(xtb,'frame_*/hess/xtb_hess.out'),
+        'saddles':None,
+        'confirmed':None,
+        'cocos_groups':None,
+        'packing_sha256':row.get('input_sha256'),
+        'note':'Counts are file presence, not invented energies.',
+    }
+    conf=post/'confirmed_minima.csv'
+    if conf.is_file():
+        with conf.open(encoding='utf-8') as fh:
+            info['confirmed']=max(0,sum(1 for _ in fh)-1)
+    uniq=post/'unique_representatives.csv'
+    if uniq.is_file():
+        with uniq.open(encoding='utf-8') as fh:
+            info['cocos_groups']=max(0,sum(1 for _ in fh)-1)
+    if extra:
+        info.update(extra)
+    dest=cr/'STATUS.json'
+    dest.parent.mkdir(parents=True,exist_ok=True)
+    dest.write_text(json.dumps(info,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+    print('Wrote',dest)
+    return dest
+
+
+def resume(args):
+    """Continue unfinished relax/hess/refine. Does not restart a non-empty GWH batch."""
+    row=select(args); require_launch_allowed(args, row)
+    cr=case_root(args)
+    if not (cr/'xtb_runs'/'manifest.json').is_file():
+        raise RuntimeError('Nothing to resume: run prepare first. GWH is not restarted into a non-empty folder.')
+    relax(args); hess(args); refine(args)
+    write_status_json(args, {'stage':'resume'})
+
+
+def run_series(args):
+    """GWH -> collect -> prepare -> relax -> hess -> refine. Still gated."""
+    row=select(args); require_launch_allowed(args, row)
+    cr=case_root(args)
+    gwh_dir=cr/'gwh'
+    nstruct=int(getattr(args,'nstruct',100) or 100)
+    if not gwh_dir.exists() or not any(gwh_dir.iterdir()):
+        args.nstruct=nstruct
+        if not hasattr(args,'gwh'):
+            args.gwh=str(ROOT/'vendors/Glorious-Water-Hole/gloriouswaterhole.py')
+        if not hasattr(args,'xtb'):
+            args.xtb=None
+        gwh(args)
+    else:
+        print(f'{gwh_dir} already has files; skipping GWH (resume).')
+    collect(args); prep(args); relax(args); hess(args); refine(args)
+    write_status_json(args, {'stage':'run-series','nstruct':nstruct})
+
+
+def export_results(args):
+    import export_canonical
+    dest, rows = export_canonical.export_case(args.case)
+    write_status_json(args, {'stage':'export-results','exported':str(dest),'n_rows':len(rows)})
+    print('Exported', dest)
+
+
+def upload_drive(args):
+    script=ROOT/'tools'/'drive_upload.py'
+    p=subprocess.run([sys.executable,str(script)],check=False)
+    if p.returncode!=0:
+        raise RuntimeError('Drive upload did not complete. Staging remains in drive_staging/.')
+
+
+def verify_delivery(args):
+    stage=ROOT/'drive_staging'
+    report=stage/'DRIVE_UPLOAD_REPORT.json'
+    if not report.is_file():
+        raise RuntimeError('No DRIVE_UPLOAD_REPORT.json; upload has not succeeded.')
+    data=json.loads(report.read_text(encoding='utf-8'))
+    print(json.dumps(data,indent=2)[:4000])
+    missing=[]
+    for folder, info in (data.get('folders') or {}).items():
+        if not info.get('id'):
+            missing.append(folder)
+    if missing:
+        raise RuntimeError('Drive folders missing ids: '+', '.join(missing))
+    print('Delivery report present for', list((data.get('folders') or {}).keys()))
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     sub=p.add_subparsers(dest='action',required=True)
@@ -360,6 +463,27 @@ def main():
     a.set_defaults(func=process_existing)
     a=sub.add_parser('visualize', help='same as process-existing (postprocess only)')
     a.set_defaults(func=visualize_cmd)
+    a=sub.add_parser('resume', help='continue unfinished relax/hess/refine; does not restart GWH')
+    a.add_argument('--case',required=True);a.add_argument('--pilot',action='store_true')
+    a.add_argument('--xtb',default=None);a.add_argument('--workers',type=int,default=2)
+    a.add_argument('--limit',type=int);a.add_argument('--imag-thresh',type=float,default=5.0)
+    a.add_argument('--step-A',type=float,default=0.15)
+    a.add_argument('--max-iters',type=int,default=P.DEFAULT_MAX_REFINE_ITERS)
+    a.set_defaults(func=resume)
+    a=sub.add_parser('run-series', help='gated GWH+opt+hess+refine for one case')
+    a.add_argument('--case',required=True);a.add_argument('--pilot',action='store_true')
+    a.add_argument('--nstruct',type=int,default=100);a.add_argument('--xtb',default=None)
+    a.add_argument('--gwh',default=str(ROOT/'vendors/Glorious-Water-Hole/gloriouswaterhole.py'))
+    a.add_argument('--workers',type=int,default=2);a.add_argument('--limit',type=int)
+    a.add_argument('--imag-thresh',type=float,default=5.0);a.add_argument('--step-A',type=float,default=0.15)
+    a.add_argument('--max-iters',type=int,default=P.DEFAULT_MAX_REFINE_ITERS)
+    a.set_defaults(func=run_series)
+    a=sub.add_parser('export-results');a.add_argument('--case',required=True);a.add_argument('--pilot',action='store_true')
+    a.set_defaults(func=export_results)
+    a=sub.add_parser('upload-drive');a.set_defaults(func=upload_drive)
+    a=sub.add_parser('verify-delivery');a.set_defaults(func=verify_delivery)
+    a=sub.add_parser('write-status');a.add_argument('--case',required=True);a.add_argument('--pilot',action='store_true')
+    a.set_defaults(func=lambda args: write_status_json(args))
     for cmd,fn in [('gwh',gwh),('collect',collect),('prepare',prep),('relax',relax),('hess',hess),('refine',refine),('dedup',dedup)]:
         a=sub.add_parser(cmd);a.add_argument('--case',required=True,choices=sorted(cases()));a.add_argument('--pilot',action='store_true',help='keep small pilot in separate pilots/ folder')
         if cmd=='gwh':

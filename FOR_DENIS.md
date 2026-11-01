@@ -1,32 +1,27 @@
 # For Denis
 
-This file is the public-repo counterpart of `MESSAGE_TO_DENIS.md`. Nothing in it changes `CASE_STATUS.csv` or sets `DENIS_ASSIGNED`.
+This file is the public-repo counterpart of `MESSAGE_TO_DENIS.md`. Nothing in it sets `DENIS_ASSIGNED`.
 
 ## Current gate
 
 - `K_06` remains `ON_HOLD`. The 100-start series has **not** been launched.
-- Li_07–Li_14 and K_07–K_14 remain `NOT_ASSIGNED`.
-- Na⁺ and Rb⁺ are **not** in this case table (Na verbally claimed; Rb already running elsewhere).
-- F⁻/Cl⁻/Br⁻ are supported in code (`--chrg -1`) but have **no** packing files and **no** calculations.
+- K_04, K_05, K_07–K_14, Li_07–Li_14, Cl_04–Cl_14, Br_04–Br_14 are `NOT_ASSIGNED`.
+- Na⁺ and Rb⁺ are **not** in this case table.
+- Cl⁻/Br⁻ packings exist (Sloane directions, mendeleev VI radii). **No** GWH `--Opt`, **no** xTB free opt.
+- Launch refuses `ON_HOLD` and `NOT_ASSIGNED` unless `DENIS_ASSIGNED=yes`.
 
 ## Existing data that *was* run (method development, 2-start pilot)
 
 K⁺(H₂O)₆, GFN2-xTB/ALPB(water):
 
-1. `frame_001` — E = −30.517135487228 Eh, genuine minimum, CoCoS group 0 (representative).
+1. `frame_001` — E = −30.517135487228 Eh, genuine minimum, CoCoS group 0 (**unique representative**).
 2. `frame_000` minus branch — E = −30.517100856916 Eh, confirmed minimum, same CoCoS group.
 3. `frame_000` plus branch — E = −30.517067438374 Eh, confirmed minimum, same CoCoS group.
 
-`frame_000` free-opt was a saddle (ν = −66.06 cm⁻¹) and is excluded from grouping.
+`unique_representatives.xyz` now holds only `frame_001`. All three geometries remain in `confirmed_minima.xyz`. `frame_000` free-opt was a saddle (ν = −66.06 cm⁻¹) and is excluded from grouping.
 
-## Decisions still needed (same as MESSAGE_TO_DENIS.md)
+## Decisions still needed
 
-1. May this workstation take K⁺(H₂O)₆, 100 starts, packing SHA256 `06ff2c3bf4b43e0d0382a684539dd5b3edf8e618500c857b9d4aa045700a11e5`?
-2. Keep GWH `from_euler('zyz')` (SciPy-extrinsic) or switch to `'ZYZ'` (SciPy-intrinsic)? Source is unchanged until you say.
-3. Which of Li_07–14 / K_07–14, if any, are assigned here?
-4. CN cutoff for publication (provisional K cut 3.20 Å is marked `BLOCKING_UNCONFIRMED`).
-5. Confirmation that the K₆ **pilot** geometries and figures may stay in the public `waterel` repository.
+See `MESSAGE_TO_DENIS.md` (six questions: K_06 100-start; remaining K; Drive GWH reuse; Cl/Br assignment; Euler `'zyz'`; CN/publication).
 
-Until (1) and (5) are explicit, production chemistry stays blocked and unpublished co-author series are not pushed.
-
-Public `waterel` after the 2026-11-01 audit contains the K₆ **pilot** (2 GWH starts, 3 Hessian-confirmed minima, figures) plus code/tests/docs. `pilots/Li_07` and vendor trees are not in Git. See `CLEANUP_REPORT.md`.
+Public `waterel` contains the K₆ **pilot** plus code, tests, and Cl/Br/K_04–K_05 packings. Vendor trees and raw `cases/` stay local.

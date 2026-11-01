@@ -11,3 +11,7 @@ preflight_runs/
 venv/
 cases/
 pilots/
+drive_staging/
+validation/gwh_cli/xyz/
+google_oauth_client.json
+google_drive_token.json

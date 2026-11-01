@@ -16,6 +16,7 @@ def test_run_one_script_does_not_overwrite_and_has_preflight_gate():
     assert "workflow.py dedup" in text
     assert "ALLOW_FULL_BATCH" in text
     assert "ON_HOLD" in text
+    assert "NOT_ASSIGNED" in text
     assert "DENIS_ASSIGNED" in text
     assert "source ./env_xtb.sh" in text
     assert "XTB_BIN" in text
@@ -45,3 +46,8 @@ def test_original_pipeline_refuses_empty_xtb():
     assert "process-existing" in wf
     assert "visualize" in wf
     assert "protocol_charge" in wf
+    assert "run-series" in wf
+    assert "resume" in wf
+    assert "export-results" in wf
+    assert "upload-drive" in wf
+    assert "verify-delivery" in wf

@@ -2,6 +2,7 @@
 """Pipeline confirmed-minima filter and overwrite guards. No fabricated QC numbers."""
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 import sys
@@ -211,6 +212,21 @@ def test_k06_on_hold_is_not_bypassed_by_allow_full_batch(monkeypatch):
     W.require_launch_allowed(args, row)
 
 
+def test_cl_br_not_assigned_is_not_bypassed(monkeypatch):
+    sys.path.insert(0, str(ROOT))
+    import workflow as W
+    monkeypatch.delenv("DENIS_ASSIGNED", raising=False)
+    for case in ("Cl_04", "Br_06"):
+        args = type("A", (), {"case": case})()
+        row = W.select(args)
+        assert row["assignment_status"] == "NOT_ASSIGNED"
+        assert int(row["charge"]) == -1
+        with pytest.raises(RuntimeError, match="NOT_ASSIGNED"):
+            W.require_launch_allowed(args, row)
+    monkeypatch.setenv("DENIS_ASSIGNED", "yes")
+    W.require_launch_allowed(type("A", (), {"case": "Cl_04"})(), W.select(type("A", (), {"case": "Cl_04"})()))
+
+
 def test_refuse_overwrite_helper(tmp_path):
     p = tmp_path / "x.txt"
     p.write_text("a", encoding="utf-8")
@@ -238,4 +254,26 @@ def test_k06_pilot_copy_does_not_include_saddle(tmp_path):
         qc_checks.assert_cluster_composition(c["frame"], "K", 6, 1)
         assert freq_parser.is_confirmed_minimum(
             freq_parser.require_completed_hessian(c["hess_log"], 5.0), nu_min_cm1=-5.0
+        )
+
+
+def test_k06_unique_representatives_one_per_cocos_group():
+    unique = ROOT / "results" / "K" / "6" / "final" / "unique_representatives.xyz"
+    confirmed = ROOT / "results" / "K" / "6" / "final" / "confirmed_minima.xyz"
+    members = ROOT / "results" / "K" / "6" / "final" / "all_group_members.xyz"
+    if not unique.is_file():
+        pytest.skip("canonical K6 export not present")
+    u = P.read_xyz(unique)
+    assert len(u) == 1
+    assert "frame_001" in u[0]["comment"]
+    if confirmed.is_file():
+        c = P.read_xyz(confirmed)
+        assert len(c) == 3
+        assert all("cocos_group=0" in fr["comment"] for fr in c)
+    if members.is_file():
+        assert len(P.read_xyz(members)) == 3
+    pilot = ROOT / "results" / "K_06" / "pilot_2" / "xtb_runs" / "frame_001" / "xtbopt.xyz"
+    if pilot.is_file():
+        assert hashlib.sha256(pilot.read_bytes()).hexdigest() == (
+            "cbd2d5f4b8cfcc03bccf4e9f938707c7c1fe9d5725135f7c7f9de990e4f43450"
         )

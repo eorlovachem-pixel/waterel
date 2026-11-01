@@ -6,11 +6,14 @@
   "n_gwh_starts": 2,
   "n_freq_confirmed": 3,
   "n_cocos_groups": 1,
-  "cocos_note": "All three confirmed minima belong to CoCoS group 0; representative is frame_001.",
+  "unique_representative_ids": [
+    "frame_001"
+  ],
+  "cocos_note": "All three confirmed minima belong to CoCoS group 0; unique_representatives.xyz holds only the lowest-energy member (frame_001). all_group_members.xyz and confirmed_minima.xyz hold every confirmed geometry.",
   "cn_cut_status": "BLOCKING_UNCONFIRMED",
   "cn_cut_A": 3.2,
   "pilot_original": "results/K_06/pilot_2",
-  "created_utc": "2026-10-31T23:20:48.025497+00:00",
+  "created_utc": "2026-11-01T10:53:50.645079+00:00",
   "rows": [
     {
       "id": "frame_001",

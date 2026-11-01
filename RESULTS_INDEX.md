@@ -1,6 +1,6 @@
 # Results index
 
-Generated: 2026-10-31T23:20:57.812942+00:00
+Generated: 2026-11-01T11:01:21.508098+00:00
 
 ## What was actually calculated
 
@@ -8,7 +8,9 @@ Generated: 2026-10-31T23:20:57.812942+00:00
 |---|---|---|---|---|---|
 | K+ (H2O)6 pilot | 6 | 2 | 3 | 1 | complete pilot; production 100-start ON_HOLD |
 | Li+, Na+, Rb+ production | — | — | — | — | not run (NOT_ASSIGNED / claimed elsewhere) |
-| F−, Cl−, Br− | — | — | — | — | code supports charge −1; no packing/assignment; no QC |
+| F− | — | — | — | — | code supports charge −1; no packing/assignment; no QC |
+| Cl− (H2O)4–14 | 4–14 | 0 | 0 | 0 | packings + CASE_STATUS NOT_ASSIGNED; no GWH/xTB |
+| Br− (H2O)4–14 | 4–14 | 0 | 0 | 0 | packings + CASE_STATUS NOT_ASSIGNED; no GWH/xTB |
 
 Known K6 pilot regression: 2 GWH starts, 3 frequency-confirmed geometries, 1 CoCoS group.
 Original files remain in `results/K_06/pilot_2/` (not rewritten).
@@ -29,5 +31,3 @@ See `figures/FIGURE_INDEX.md`.
 
 n_freq_confirmed = 3
 n_cocos_groups = 1
-
-File hashes for published paths: `SHA256SUMS.txt`. Cleanup of unused session helpers: `CLEANUP_REPORT.md`. No additional QC beyond this K6 pilot.

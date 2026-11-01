@@ -160,8 +160,8 @@ def k06_matplotlib_structures(entries):
     )
     note = pub / "Fig_Structures_Anions_NOT_GENERATED.txt"
     note.write_text(
-        "Fig_Structures_Anions was not generated: no F-/Cl-/Br- calculations exist in this kit.\n"
-        "CASE_STATUS has no anion rows. No dummy structures were drawn.\n",
+        "Fig_Structures_Anions was not generated: Cl-/Br- packings exist but no GWH/xTB QC.\n"
+        "CASE_STATUS Cl_04–Cl_14 and Br_04–Br_14 are NOT_ASSIGNED. No dummy structures were drawn.\n",
         encoding="utf-8",
     )
     return files

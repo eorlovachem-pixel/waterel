@@ -42,11 +42,17 @@ def test_case_status_k06_charge_and_target():
     ions = {r["ion"] for r in rows.values()}
     assert "Na" not in ions
     assert "Rb" not in ions
-    assert ions <= {"Li", "K"}
+    assert "F" not in ions
+    assert ions <= {"Li", "K", "Cl", "Br"}
     for name, row in rows.items():
         if name == "K_06":
             continue
         assert row["assignment_status"] == "NOT_ASSIGNED", name
+    for name, row in rows.items():
+        if row["ion"] in ("Cl", "Br"):
+            assert int(row["charge"]) == -1, name
+            assert int(row["n_start_target"]) == 100, name
+            assert row["assignment_status"] == "NOT_ASSIGNED", name
 
 
 def test_li_packings_match_case_status():

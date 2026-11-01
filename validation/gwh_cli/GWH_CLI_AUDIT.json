@@ -1,0 +1,54 @@
+{
+  "timestamp_UTC": "2026-11-01T10:53:51.337220+00:00",
+  "gwh_path": "/home/antiz/hydration-research/Hydration_unassigned_2026-10-30/vendors/Glorious-Water-Hole/gloriouswaterhole.py",
+  "gwh_sha256": "17fa895af60893c0cf34982d235b6b9909e7aa05c47c0f8efaa07f8608b37bed",
+  "gwh_git": "7411811374b6422a15f23d6d86a47f2145f8ac47",
+  "help_exit_code": 0,
+  "help_has_Charge": true,
+  "help_has_NumStruct": true,
+  "help_has_Random": true,
+  "help_has_Opt": true,
+  "help_has_AddMethod": true,
+  "help_has_DoNotCenter": true,
+  "default_charge_is_0": true,
+  "default_mult_is_1": true,
+  "uhf0_means_mult_1": true,
+  "from_euler_zyz": true,
+  "from_euler_ZYZ": false,
+  "xtb_uses_charge_flag": true,
+  "documented_20_cmd": "gloriouswaterhole.py -f <packing.vecfle> --Charge -1 --NumStruct 20 --Random --Opt --AddMethod \" --alpb water --gfn 2 \" --DoNotCenter",
+  "Cl_04_geom20": {
+    "centers": [
+      "Cl"
+    ],
+    "n_sites": 4,
+    "radii_A": [
+      3.2099999999999995,
+      3.2099999999999995,
+      3.2099999999999995,
+      3.2099999999999995
+    ],
+    "nstruct": 20,
+    "seed": 20261101
+  },
+  "Br_04_geom20": {
+    "centers": [
+      "Br"
+    ],
+    "n_sites": 4,
+    "radii_A": [
+      3.3599999999999994,
+      3.3599999999999994,
+      3.3599999999999994,
+      3.3599999999999994
+    ],
+    "nstruct": 20,
+    "seed": 20261101
+  },
+  "Cl_04_nstruct_ok": true,
+  "Br_04_nstruct_ok": true,
+  "energies": null,
+  "opt_series_launched": false,
+  "hundred_start_launched": false,
+  "reason": "CASE_STATUS Cl/Br rows are NOT_ASSIGNED. Author has not finalized anion inclusion. This audit checks CLI, Euler 'zyz', packing readability, and a 20-structure geometry-only loop (no xTB SPE, no --Opt). GWH --Opt and the 100-start series are not started."
+}

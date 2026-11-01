@@ -46,7 +46,7 @@ def write_figure_index():
         f"- Reason: {burette_status.get('burette_app_reason', 'see figures/burette/scenes/BURETTE_STATUS.json')}",
         "- **xyzrender** is Burette's documented XYZ fallback renderer. Files under `figures/burette/` produced by the xyzrender CLI are labeled `renderer=xyzrender`, not Burette.app.",
         "- **Matplotlib** ball-and-stick and numerical plots live under `figures/publication/` and are labeled as Matplotlib.",
-        "- No dummy Li/Na/Rb/F/Cl/Br structures were drawn.",
+        "- No dummy Li/Na/Rb/F/Cl/Br structures were drawn. Cl/Br packings exist; no anion QC XYZ.",
         "",
         "## Atom colour legend (ball-and-stick)",
         "",
@@ -91,7 +91,7 @@ def write_figure_index():
         "",
         "## Not generated (no calculated structures)",
         "",
-        "- `Fig_Structures_Anions` — no F−/Cl−/Br− XYZ in this kit.",
+        "- `Fig_Structures_Anions` — Cl/Br packings exist; no frequency-confirmed anion XYZ.",
         "- `R(n)`, `CN(n)`, `<cosθ>(n)` series — only n = 6 exists.",
         "",
         "## Per-geometry scenes",
@@ -122,7 +122,9 @@ Generated: {datetime.now(timezone.utc).isoformat()}
 |---|---|---|---|---|---|
 | K+ (H2O)6 pilot | 6 | 2 | 3 | 1 | complete pilot; production 100-start ON_HOLD |
 | Li+, Na+, Rb+ production | — | — | — | — | not run (NOT_ASSIGNED / claimed elsewhere) |
-| F−, Cl−, Br− | — | — | — | — | code supports charge −1; no packing/assignment; no QC |
+| F− | — | — | — | — | code supports charge −1; no packing/assignment; no QC |
+| Cl− (H2O)4–14 | 4–14 | 0 | 0 | 0 | packings + CASE_STATUS NOT_ASSIGNED; no GWH/xTB |
+| Br− (H2O)4–14 | 4–14 | 0 | 0 | 0 | packings + CASE_STATUS NOT_ASSIGNED; no GWH/xTB |
 
 Known K6 pilot regression: 2 GWH starts, 3 frequency-confirmed geometries, 1 CoCoS group.
 Original files remain in `results/K_06/pilot_2/` (not rewritten).
@@ -146,3 +148,9 @@ n_cocos_groups = {man.get('n_cocos_groups')}
 """
     dest.write_text(text, encoding="utf-8")
     return dest
+
+
+if __name__ == "__main__":
+    print(write_figure_index())
+    print(write_results_index())
+

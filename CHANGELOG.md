@@ -1,5 +1,13 @@
 # Changelog (2026-10-31)
 
+## Cl⁻ / Br⁻ / K₄–K₅ technical prep (2026-11-01)
+
+- Sloane dim-3 packings for Cl_04–14, Br_04–14, K_04, K_05. mendeleev 1.3.0 radii Cl 3.21 Å, Br 3.36 Å; K_04/K_05 keep 3.04 Å. Author K_06–14 and Li packings not rewritten.
+- CASE_STATUS rows are `NOT_ASSIGNED`. Launch refuses `NOT_ASSIGNED` as well as `ON_HOLD`.
+- `unique_representatives.xyz` for the K6 pilot is now one geometry per CoCoS group (`frame_001`). All confirmed members remain in `confirmed_minima.xyz`.
+- `workflow.py` gained `resume`, `run-series`, `export-results`, `upload-drive`, `verify-delivery`.
+- Production 100-start Cl/Br/K series **not launched**.
+
 ## Final audit / cleanup (2026-11-01)
 
 - Backed up the Linux kit to `/home/antiz/hydration-research/_backups/` (outside this Git tree).
